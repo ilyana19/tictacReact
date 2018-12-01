@@ -40,8 +40,10 @@ class Game extends React.Component {
   jumpTo(move) {
     console.log("jumped to: " + move)
     this.setState({
-      stepNumber: move
+      stepNumber: move,
+      xIsNext: move % 2 ? false : true
     })
+    console.log(this.state.xIsNext)
   }
 
   render() {
