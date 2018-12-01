@@ -12,7 +12,7 @@ class Game extends React.Component {
           squares: Array(9).fill(null)
         }
       ],
-
+      stepNumber: 0,
       xIsNext: true
     };
   }
@@ -31,12 +31,10 @@ class Game extends React.Component {
           squares: squares
         }
       ]),
-   //   stepNumber: history.length,
+      stepNumber: history.length,
       xIsNext: !this.state.xIsNext
     });
   }
-
-
 
   render() {
     const history = this.state.history;
@@ -62,9 +60,9 @@ class Game extends React.Component {
     return (
       <div>
       <h1>Let's play a game!</h1>
-      
+
       <div className="game">
-        
+
         <div className="game-board">
           <Board
             squares={current.squares}
